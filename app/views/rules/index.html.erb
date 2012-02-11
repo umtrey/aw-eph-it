@@ -1,0 +1,25 @@
+<h1>Listing rules</h1>
+
+<table>
+  <tr>
+    <th>Ingredient</th>
+    <th>Explanation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rules.each do |rule| %>
+  <tr>
+    <td><%= rule.ingredient_id %></td>
+    <td><%= rule.explanation %></td>
+    <td><%= link_to 'Show', rule %></td>
+    <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
+    <td><%= link_to 'Destroy', rule, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rule', new_rule_path %>
