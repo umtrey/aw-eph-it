@@ -1,5 +1,6 @@
 <h1>Listing games</h1>
 
+
 <table>
   <tr>
     <th>Name</th>
@@ -13,8 +14,10 @@
     <th></th>
     <th></th>
   </tr>
+  <% counter = 0 %>
 
 <% @games.each do |game| %>
+  <% counter += 1 %>
   <tr>
     <td><%= game.name %></td>
     <td><%= game.shortdescription %></td>
@@ -31,5 +34,5 @@
 </table>
 
 <br />
-
+<P><STRONG style="font-size: 48px;"><%= counter %></STRONG> goddamn games. Dope.</P>
 <%= link_to 'New Game', new_game_path %>

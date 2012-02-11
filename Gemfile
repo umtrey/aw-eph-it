@@ -5,6 +5,7 @@ gem 'rails', '3.0.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
 gem 'pg'
 # gem 'gravatar_image_tag', '1.0.0.pre2'
 # gem 'will_paginate', '3.0.pre2'
@@ -27,6 +28,11 @@ group :test do
 	gem 'autotest-growl', '0.2.16'
 	gem 'factory_girl_rails', '1.0'
 end
+
+gem 'sqlite3'
+
+gem 'nokogiri'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
