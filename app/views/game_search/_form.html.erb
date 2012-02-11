@@ -1,0 +1,8 @@
+<%= form_tag("/list", :method => "get") do %>
+	<%= render 'locations' %>
+	<%= render 'ingredients' %>
+	<%= render 'rowdiness' %>
+	<div class="actions">
+	  <%= submit_tag("Find Game") %>
+	</div>
+<% end%>

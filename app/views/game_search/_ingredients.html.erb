@@ -1,0 +1,7 @@
+<div id="ingredients">
+	<% @ingredients.each do |ing| %>
+		<div class="ingredient" id="<%= ing.name %>">
+		<%= check_box_tag :id => ing.name, :value => ing.id, :name => "ings[]"%>
+		<%= label_tag(ing.name) %>
+	<% end %>
+</div>

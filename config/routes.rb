@@ -1,4 +1,11 @@
 AwEphIt::Application.routes.draw do
+  
+  
+  get '/index' => "game_search#index"
+  # get '/index' => "game_serach#query"
+  get '/list' => "game_search#list"
+  
+
   resources :sources
 
   resources :gameingredients
@@ -10,6 +17,8 @@ AwEphIt::Application.routes.draw do
   resources :locations
 
   resources :games
+  
+  root :to => 'game_search#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
