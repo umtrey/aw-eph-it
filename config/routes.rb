@@ -4,7 +4,8 @@ AwEphIt::Application.routes.draw do
   get '/index' => "game_search#index"
   # get '/index' => "game_serach#query"
   get '/list' => "game_search#list"
-  
+
+  get '/game_search' => "game_search#index"
 
   resources :sources
 
