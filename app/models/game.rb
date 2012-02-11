@@ -8,7 +8,9 @@ class Game < ActiveRecord::Base
   
   def self.find_by_criteria(params)
     query = joins(:locations).where("locations.id = ?", params[:location_id])
+    query = query.where("rowdiness = ?", params[:rowdiness])
     query
+    # raise query.inspect
   end
   
   
