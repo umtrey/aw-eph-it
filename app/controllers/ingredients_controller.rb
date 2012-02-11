@@ -80,4 +80,10 @@ class IngredientsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def random_rule
+    @ingredient = Ingredient.find(params["ingredient_id"])
+    @rule = @ingredient.rules.sample
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211032012) do
+ActiveRecord::Schema.define(:version => 20120211193700) do
 
   create_table "gameingredients", :force => true do |t|
     t.integer  "game_id"
@@ -47,6 +47,13 @@ ActiveRecord::Schema.define(:version => 20120211032012) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rules", :force => true do |t|
+    t.integer  "ingredient_id"
+    t.text     "explanation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

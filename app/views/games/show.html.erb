@@ -35,6 +35,11 @@
   <%= @game.rowdiness %>
 </p>
 
+<p><div id="random_rule">
+
+</div>
+
+<a onclick='$("#random_rule").load("../../ingredients/<%= @game.ingredients.first.id %>/random_rule/");'>BOOST RULE</a></p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
