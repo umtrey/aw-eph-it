@@ -1,0 +1,34 @@
+<!-- This is a crawler for http://www.drinknation.com/drinking-games  -->
+
+<h1 style="float: left; ">Crawler</h1>
+<DIV style="width: 960px; margin-left: 200px; background: #EEE; border-radius: 20px; padding: 20px;">
+
+<UL style="list-style:none;">
+<% counter = 0 %>
+<% @doc.css('.middleContent table a').each do |link| %>
+		<% counter += 1 %>
+
+		<!-- This limits the results to keep pageload down. It also says do not take the first two results of the table as they're table column titles -->
+		<% if counter < 2 %> 
+		<% game = Game.new %>
+			
+		<% game.name =  link.content %>
+		<!-- Load the page we want to crawl -->
+		<% doc2 = Nokogiri::HTML(open('http://www.drinknation.com' + link['href'])) %>
+
+		<!-- Find each p document on the page  -->
+	    <% doc2.css('.divGameContent').each do |link2| %>
+			<% game.fulldescription = link2.content %>
+		<% end  %>
+	</LI>
+
+			
+		<!--- This saves the crawl. Disabled for now so we don't fuck it up. <% game.save %> -->
+
+		<!-- To keep the pageload down break this loop if the counter has reached 3 queries  -->
+		<% break @doc if counter == 1 %>
+			
+		<% end %>
+		<% end %>
+</UL>
+</DIV>

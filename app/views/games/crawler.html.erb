@@ -1,0 +1,32 @@
+<!-- This is a crawler for http://www.webtender.com/handbook/games/  -->
+
+<h1 style="float: left; ">Crawler</h1>
+<DIV style="width: 960px; margin-left: 200px; background: #EEE; border-radius: 20px; padding: 20px;">
+
+<UL style="list-style:none;">
+<% counter = 0 %>
+<% @doc.css('table table a').each do |link| %>
+		<% counter += 1 %>
+
+		<!-- This limits the results to keep pageload down. It also says do not take the first two results of the table as they're table column titles -->
+		<% if counter < 7 && counter != 2 && counter != 1 %> 
+			
+			<LI>
+			<h3><%= link.content %></h3>
+			<!-- Load the page we want to crawl -->
+			<% doc2 = Nokogiri::HTML(open('http://www.webtender.com/handbook/games/' + link['href'])) %>
+
+			<!-- Find each p document on the page  -->
+		    <% doc2.css('p').each do |link2| %>
+				<P><%= link2.content.sub('Copyright © 1995-2012 The Webtender.About | Disclaimer | Privacy policy', '').sub('<!--', '').sub('e9 = new Object(); e9.size = "728x90,468x60"; e9.noAd = 1;', '').sub('//-->','').sub("Game source: rec.food.drink / The (Un)Official Internet Bartender's Guide", '') %></P>
+			<% end  %>
+			
+		<% end %>
+	</LI>
+
+		<!-- To keep the pageload down break this loop if the counter has reached 3 queries  -->
+		<% break @doc if counter == 6 %>
+
+<% end %>
+</UL>
+</DIV>
