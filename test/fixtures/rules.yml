@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ingredient_id: 1
+  explanation: MyText
+
+two:
+  ingredient_id: 1
+  explanation: MyText

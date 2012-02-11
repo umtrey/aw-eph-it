@@ -14,6 +14,15 @@ class GamesController < ApplicationController
   # GET /games/1.xml
   def show
     @game = Game.find(params[:id])
+    if @game.ingredients.empty?
+      @ruleid = 0
+    else
+      if @game.ingredients.first.rules.empty?
+        @ruleid = 0
+      else
+        @ruleid = @game.ingredients.first.id
+      end
+    end
 
     respond_to do |format|
       format.html # show.html.erb
