@@ -1,2 +1,6 @@
 <h1>GameSearch#list</h1>
 <p>Find me in app/views/game_search/list.html.erb</p>
+
+<% @games.each do |game| %>
+  <%= game.name %>
+<% end %>

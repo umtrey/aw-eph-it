@@ -1,8 +1,8 @@
 <div id="locations">
 	<% @locations.each do |location| %>
 		<div class="location" id="<%= location.name %>">
-			<%= radio_button_tag :location, location.id %>
-			<%= label_tag :location, location.name, :value => location.id %>
+			<%= radio_button_tag :location_id, location.id %>
+			<%= label_tag :location, location.id%>
 		</div>
 	<% end %>
 </div>
