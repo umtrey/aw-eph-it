@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @game.name %>
+</p>
+
+<p>
+  <b>Shortdescription:</b>
+  <%= @game.shortdescription %>
+</p>
+
+<p>
+  <b>Fulldescription:</b>
+  <%= @game.fulldescription %>
+</p>
+
+<p>
+  <b>Players:</b>
+  <%= @game.players %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @game.source_id %>
+</p>
+
+<p>
+  <b>Complexity:</b>
+  <%= @game.complexity %>
+</p>
+
+<p>
+  <b>Rowdiness:</b>
+  <%= @game.rowdiness %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  shortdescription: MyString
+  fulldescription: MyText
+  players: 1
+  source_id: 1
+  complexity: 1
+  rowdiness: 1
+
+two:
+  name: MyString
+  shortdescription: MyString
+  fulldescription: MyText
+  players: 1
+  source_id: 1
+  complexity: 1
+  rowdiness: 1
