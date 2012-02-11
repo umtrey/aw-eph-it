@@ -13,6 +13,9 @@ AwEphIt::Application.routes.draw do
   resources :gamelocations
   resources :locations
   resources :games
+
   root :to => 'game_search#index'
+  
+  get "crawler/" => "games#crawler3"
 
 end

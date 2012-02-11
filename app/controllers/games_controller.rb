@@ -10,7 +10,34 @@ class GamesController < ApplicationController
     end
   end
 
-  # GET /games/1
+  def crawler 
+
+    require 'nokogiri'
+    require 'open-uri'
+    
+    @doc = Nokogiri::HTML(open('http://www.webtender.com/handbook/games/')) 
+
+  end
+
+  def crawler2 
+
+    require 'nokogiri'
+    require 'open-uri'
+    
+    @doc = Nokogiri::HTML(open('http://www.drinknation.com/drinking-games')) 
+
+  end
+
+  def crawler3
+
+    require 'nokogiri'
+    require 'open-uri'
+    
+    @doc = Nokogiri::HTML(open('http://www.drinknation.com/drinking-games')) 
+
+  end
+  
+    # GET /games/1
   # GET /games/1.xml
   def show
     @game = Game.find(params[:id])
