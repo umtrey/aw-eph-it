@@ -6,11 +6,21 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+  Location.destroy_all
+  Game.destroy_all
+  Gamelocation.destroy_all
 
   location = Location.create(:name => "home")
+  location2 = Location.create(:name => "bar")
   
-  Game.create(:name => "Beer Pong", :players => 2, :locations => [location])
-  
+  Game.create([
+    {:name => "Beer Pong", :players => 2, :locations => [location           ]},
+    {:name => "Asshole",   :players => 4, :locations => [location, location2]},
+    {:name => "Beirut",    :players => 4, :locations => [location2          ]},
+    {:name => "Anchorman", :players => 8, :locations => [location2          ], :rowdiness => 1},
+    {:name => "Flip Cup", :players => 12, :locations => [location, location2], :rowdiness => 2},
+    {:name => "Quarters", :players => 8, :locations => [location2           ], :rowdiness => 3}
+    ])
 
     # 
     # 
