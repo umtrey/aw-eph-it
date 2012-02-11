@@ -1,4 +1,14 @@
 AwEphIt::Application.routes.draw do
+  resources :sources
+
+  resources :gameingredients
+
+  resources :ingredients
+
+  resources :gamelocations
+
+  resources :locations
+
   resources :games
 
   # The priority is based upon order of creation:
