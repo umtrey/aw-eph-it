@@ -3,6 +3,7 @@ class GameSearchController < ApplicationController
     @submission = Submission.new
     @locations = Location.all
     @ingredients = Ingredient.all
+    @ings = []
   end
 
   def query
