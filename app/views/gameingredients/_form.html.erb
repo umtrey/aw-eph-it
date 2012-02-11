@@ -1,0 +1,25 @@
+<%= form_for(@gameingredient) do |f| %>
+  <% if @gameingredient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gameingredient.errors.count, "error") %> prohibited this gameingredient from being saved:</h2>
+
+      <ul>
+      <% @gameingredient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :game_id %><br />
+    <%= f.text_field :game_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredient_id %><br />
+    <%= f.text_field :ingredient_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

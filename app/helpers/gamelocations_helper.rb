@@ -1,0 +1,2 @@
+module GamelocationsHelper
+end

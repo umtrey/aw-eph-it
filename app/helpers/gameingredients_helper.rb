@@ -1,0 +1,2 @@
+module GameingredientsHelper
+end
