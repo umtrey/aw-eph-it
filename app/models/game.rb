@@ -25,7 +25,7 @@ class Game < ActiveRecord::Base
         ingredients.delete(Ingredient.find(mying))
       end
     end
-    query.where(:ingredients => {:id => ingredients}).group("games.name")
+    query.where(:ingredients => {:id => ingredients}).group("games.name","games.id")
   end
   
   
