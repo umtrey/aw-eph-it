@@ -1,6 +1,6 @@
-body { text-align: center; background-color: #EEE; color: #333; font-family: "myriad-pro",sans-serif; margin: 0; }
+body { text-align: center; background: url('../images/pinstripe.png'); color: #333; font-family: "myriad-pro",sans-serif; margin: 0; }
 
-#wrapper { text-align: left; margin: 0 auto; width: 100%; background: #FFF; }
+#wrapper { text-align: left; margin: 0 auto; width: 100%; }
 #header { background: url('../images/yellow-gradient.gif'); height: 50px; }
 	#header img.back { margin: 5px 0 0 10px; }
 
@@ -11,8 +11,25 @@ ul#results { list-style: none; padding: 0; margin: 0; }
 	ul#results a { background: url('../images/arrow.png') no-repeat 100% 50%; display: block; text-decoration: none; padding-right: 20px; }
 	ul#results a p { margin-top: 0; font-size: 15px; color: #666; }
 
-#details { padding: 2px 10px; min-height: 400px; background: #FFF url('../images/white-gradient.gif') repeat-x 0 100%; }	
+#details { padding: 2px 10px; min-height: 400px; }	
 	#details h3 { border-bottom: 1px solid #000; margin-top: 5px; }
+
+#search { text-align: center; }	
+	#search h3 { }
+	#search #locations { text-align: center; padding-left: 90px; }
+	#search .location { float: left; width: 40px; border: 1px solid #EEE; border-radius: 4px; background: #FFF; padding: 10px; margin-right: 3px; }
+	#search .location label { text-transform: capitalize; }
+	
+	#search #ingredients { text-align: center; padding: 0 0 0 30px; }
+	#search .ingredient { float: left; width: 100px; margin: 2px; border: 1px solid #EEE; border-radius: 4px; background: #FFF; padding: 10px; margin-right: 3px; }
+	#search .ingredient label { text-transform: capitalize; }
+	
+	#search #rowdiness { text-align: center; padding-left: 10px; }
+	#search .rowdiness { float: left; width: 70px; border: 1px solid #EEE; border-radius: 4px; background: #FFF; padding: 10px; margin-right: 3px; }
+	#search .rowdiness label { text-transform: capitalize; }
+	.actions input { background: #669900; color: #FFF; border-radius: 8px; cursor: pointer; border: 1px solid #336600; font-size: 14px; text-shadow: 1px 1px 1px #336600; padding: 6px; }
+	
+#logo { text-align: center; }	
 	
 div.field, div.actions {
   margin-bottom: 10px;
