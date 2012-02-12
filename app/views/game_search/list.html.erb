@@ -1,9 +1,21 @@
-<h1>GameSearch#list</h1>
-<p>Find me in app/views/game_search/list.html.erb</p>
-<ul>
+<DIV id="header">
+	<A HREF="javascript:history.go(-1)" style="display: block; float:left;"><IMG src="../images/backbutton.png" class="back" border="0"></a>
+	<div id="filters" style="display: block; float:left;">
+		<UL>
+			<LI><LABEL><input id="domestic" name="domestic" type="checkbox" onclick="hide_domestic()" checked="true"/><BR>Domestic</LABEL></LI>
+			<LI><LABEL><input id="import" name="import" type="checkbox" onclick="hide_import()" checked="true"/><BR>Import</LABEL></LI>
+		</UL>
+	</div>	
+	<DIV id="slide" style="display: block; float:left;">
+	<div id="slider-complex"></div>&nbsp; Easier    &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; Harder
+	</DIV>
+</DIV>
+
+<ul id="results">
   <% @games.each do |game| %>
-  <div class="<%= "complex#{game.complexity} #{game.source_id == 1 ? "domestic" : "import"}"  %>">
-    <%= game.name %> - <%= game.id %>
-  </div>
+  <li class="<%= "complex#{game.complexity} #{game.source_id == 1 ? "domestic" : "import"}"  %>">
+	<a href="../games/<%= game.id %>"><h3><%= game.name %></h3>
+    <P><%= game.fulldescription %></P></a>
+  </li>
   <% end %>
 </ul>
