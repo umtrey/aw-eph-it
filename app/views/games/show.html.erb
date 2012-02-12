@@ -1,19 +1,13 @@
-<p id="notice"><%= notice %></p>
+<DIV id="header">
+	<A HREF="javascript:history.go(-1)" style="display: block; float:left;"><IMG src="../images/backbutton.png" class="back" border="0"></a>
 
-<p>
-  <b>Name:</b>
-  <%= @game.name %>
-</p>
+	</DIV>
+<DIV id="details">
+	<p id="notice"><%= notice %></p>
+	
+	<h3><%= @game.name %></h3>
 
-<p>
-  <b>Shortdescription:</b>
-  <%= @game.shortdescription %>
-</p>
-
-<p>
-  <b>Fulldescription:</b>
-  <%= simple_format(@game.fulldescription) %>
-</p>
+<%= simple_format(@game.fulldescription) %>
 
 <p>
   <b>Players:</b>
@@ -36,12 +30,7 @@
 </p>
 
 <% unless @ruleid == 0 %>
-<p><div id="random_rule">
-
-</div>
-
+<p><div id="random_rule"></div>
 <a onclick='$("#random_rule").load("../../ingredients/<%= @ruleid %>/random_rule/");'>BOOST RULE</a></p>
 <% end %>
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+</div>
