@@ -7,7 +7,7 @@
 		</UL>
 	</div>	
 	<DIV id="slide" style="display: block; float:left;">
-	<div id="slider-complex"></div>&nbsp; Easier    &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; Harder
+	<div id="slider-complex"></div>&nbsp; Easier  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; Harder
 	</DIV>
 </DIV>
 
@@ -15,7 +15,7 @@
   <% @games.each do |game| %>
   <li class="<%= "complex#{game.complexity} #{game.source_id == 1 ? "domestic" : "import"}"  %>">
 	<a href="../games/<%= game.id %>"><h3><%= game.name %></h3>
-    <P><%= game.fulldescription %></P></a>
+    <P><%= game.shortdescription %></P></a>
   </li>
   <% end %>
 </ul>
