@@ -10,35 +10,79 @@
   Game.destroy_all
   Gamelocation.destroy_all
 
-  location = Location.create(:name => "home")
-  location2 = Location.create(:name => "bar")
+  home  = Location.create(:name => "home")
+  bar = Location.create(:name => "bar" )
+  
+  ping_pong_ball  = Ingredient.create(:name => "Ping Pong ball" )
+  deck_of_cards   = Ingredient.create(:name => "Deck of Cards"  )
+  six_sided_die   = Ingredient.create(:name => "Six sided die"  )
+  hat             = Ingredient.create(:name => "hat"            )
+  red_solo_cups   = Ingredient.create(:name => "Red solo cups"  )
+  
   
   Game.create([
-    {:name => "Beer Pong", :players => 2, :locations => [location           ]},
-    {:name => "Asshole",   :players => 4, :locations => [location, location2]},
-    {:name => "Beirut",    :players => 4, :locations => [location2          ]},
-    {:name => "Anchorman", :players => 8, :locations => [location2          ], :rowdiness => 1},
-    {:name => "Flip Cup", :players => 12, :locations => [location, location2], :rowdiness => 2},
-    {:name => "Quarters", :players => 8, :locations => [location2           ], :rowdiness => 3}
+    {:name => "Beer Pong", :source_id => 1, :complexity => 1, :players => 2,   :locations => [home     ],  :rowdiness => 1,  :ingredients => [ping_pong_ball, red_solo_cups ]  },
+    {:name => "Asshole",   :source_id => 2, :complexity => 2, :players => 4,   :locations => [home, bar],  :rowdiness => 2,  :ingredients => [deck_of_cards] },
+    {:name => "Beirut",    :source_id => 2, :complexity => 3, :players => 4,   :locations => [home, bar],  :rowdiness => 1,  :ingredients => [ping_pong_ball ] },
+    {:name => "Anchorman", :source_id => 3, :complexity => 4, :players => 8,   :locations => [home, bar],  :rowdiness => 1,  :ingredients => [hat, deck_of_cards]  },
+    {:name => "Flip Cup",  :source_id => 3, :complexity => 5, :players => 12,  :locations => [home, bar],  :rowdiness => 1 },
+    {:name => "Quarters",  :source_id => 1, :complexity => 1, :players => 8,   :locations => [bar      ],  :rowdiness => 3 }
+    ])
+    
+  Source.create([
+    {:name => "USA", :flag => 'us.png'},
+    {:name => "Mexico", :flag => 'mx.png'},
+    {:name => "Djibouti", :flag => 'dj.png'}
     ])
 
+    # create_table "gameingredients", :force => true do |t|
+    #       t.integer  "game_id"
+    #       t.integer  "ingredient_id"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
     # 
+    #     create_table "gamelocations", :force => true do |t|
+    #       t.integer  "game_id"
+    #       t.integer  "location_id"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
     # 
+    #     create_table "games", :force => true do |t|
+    #       t.string   "name"
+    #       t.string   "shortdescription"
+    #       t.text     "fulldescription"
+    #       t.integer  "players"
+    #       t.integer  "source_id"
+    #       t.integer  "complexity"
+    #       t.integer  "rowdiness"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
     # 
-    # create_table "games", :force => true do |t|
-    #   t.string   "name"
-    #   t.string   "shortdescription"
-    #   t.text     "fulldescription"
-    #   t.integer  "players"
-    #   t.integer  "source_id"
-    #   t.integer  "complexity"
-    #   t.integer  "rowdiness"
-    #   t.datetime "created_at"
-    #   t.datetime "updated_at"
-    #   
-    #   
-    #   create_table "locations", :force => true do |t|
-    #     t.string   "name"
-    #     t.datetime "created_at"
-    #     t.datetime "updated_at"
-    #   end
+    #     create_table "ingredients", :force => true do |t|
+    #       t.string   "name"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
+    # 
+    #     create_table "locations", :force => true do |t|
+    #       t.string   "name"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
+    # 
+    #     create_table "rules", :force => true do |t|
+    #       t.integer  "ingredient_id"
+    #       t.text     "explanation"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
+    # 
+    #     create_table "sources", :force => true do |t|
+    #       t.string   "name"
+    #       t.string   "flag"
+    #       t.datetime "created_at"
+    #       t.datetime "updated_at"
+    #     end
