@@ -30,9 +30,21 @@
     ])
     
   Source.create([
-    {:name => "USA", :flag => 'us.png'},
-    {:name => "Mexico", :flag => 'mx.png'},
-    {:name => "Djibouti", :flag => 'dj.png'}
+    {:name => "United States", :flag => 'us.gif'},
+    {:name => "Austria", :flag => 'at.gif'},
+    {:name => "Bolivia", :flag => 'bo.gif'},
+    {:name => "Switzerland", :flag => 'chile.gif'},
+    {:name => "Chile", :flag => 'cl.gif'},
+    {:name => "China", :flag => 'cn.gif'},
+    {:name => "Cuba", :flag => 'cu.gif'},
+    {:name => "Gemany", :flag => 'de.gif'},
+    {:name => "Ecuador", :flag => 'ec.gif'},
+    {:name => "Spain", :flag => 'es.gif'},
+    {:name => "United Kingdom", :flag => 'gb.gif'},
+    {:name => "Japan", :flag => 'jp.gif'},
+    {:name => "Mexico", :flag => 'mx.gif'},
+    {:name => "Peru", :flag => 'pe.gif'},
+    {:name => "Russia", :flag => 'ru.gif'}
     ])
 
     # create_table "gameingredients", :force => true do |t|
