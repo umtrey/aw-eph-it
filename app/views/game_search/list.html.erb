@@ -2,6 +2,6 @@
 <p>Find me in app/views/game_search/list.html.erb</p>
 <ul>
   <% @games.each do |game| %>
-    <li><%= game.name %></li>
+    <li><%= game.name %> - <%= game.id %></li>
   <% end %>
 </ul>
