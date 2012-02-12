@@ -1,19 +1,16 @@
 <%= form_tag("/list", :method => "get") do %>
 
-<p>
-  <b>Choose your location</b>
+<h3>Location</h3>
   <%= render 'locations' %>
-</p>
-<p>
-  <b>What ingredients do you have available?</b>
-  <%= render 'ingredients' %>
-</p>
-<p>
-  <b>Let's get this party started!</b>
-  <%= render 'rowdiness' %>
-</p>
+<BR style="clear:both;">
+<h3>Ingredients</h3>
+	  <%= render 'ingredients' %><BR style="clear:both;">
 
+<H3>What are you looking to do?</h3>
+  <%= render 'rowdiness' %>
+<BR style="clear:both;"><BR>
+	
 <div class="actions">
 <%= submit_tag("Find Game") %>
-</div>
+</div><BR>
 <% end%>
