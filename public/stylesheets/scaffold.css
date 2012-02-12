@@ -1,6 +1,6 @@
-body { text-align: center; background: url('../images/pinstripe.png'); color: #333; font-family: "myriad-pro",sans-serif; margin: 0; width: 480px; }
+body { text-align: center; background: url('../images/pinstripe.png'); color: #333; font-family: "myriad-pro",sans-serif; margin: 0; }
 
-#wrapper { text-align: left; margin: 0 auto; width: 480px; }
+#wrapper { text-align: left; margin: 0 auto; width: 100%; }
 #header { background: url('../images/yellow-gradient.gif'); height: 50px; }
 	#header img.back { margin: 5px 0 0 10px; }
 
