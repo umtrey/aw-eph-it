@@ -21,12 +21,18 @@
   
   
   Game.create([
-    {:name => "Beer Pong", :players => 2,   :locations => [home     ],  :rowdiness => 1,  :ingredients => [ping_pong_ball, red_solo_cups ]  },
-    {:name => "Asshole",   :players => 4,   :locations => [home, bar],  :rowdiness => 2,  :ingredients => [deck_of_cards] },
-    {:name => "Beirut",    :players => 4,   :locations => [home, bar],  :rowdiness => 1,  :ingredients => [ping_pong_ball ] },
-    {:name => "Anchorman", :players => 8,   :locations => [home, bar],  :rowdiness => 1,  :ingredients => [hat, deck_of_cards]  },
-    {:name => "Flip Cup",  :players => 12,  :locations => [home, bar],  :rowdiness => 1 },
-    {:name => "Quarters",  :players => 8,   :locations => [bar      ],  :rowdiness => 3 }
+    {:name => "Beer Pong", :source_id => 1, :complexity => 1, :players => 2,   :locations => [home     ],  :rowdiness => 1,  :ingredients => [ping_pong_ball, red_solo_cups ]  },
+    {:name => "Asshole",   :source_id => 2, :complexity => 2, :players => 4,   :locations => [home, bar],  :rowdiness => 2,  :ingredients => [deck_of_cards] },
+    {:name => "Beirut",    :source_id => 2, :complexity => 3, :players => 4,   :locations => [home, bar],  :rowdiness => 1,  :ingredients => [ping_pong_ball ] },
+    {:name => "Anchorman", :source_id => 3, :complexity => 4, :players => 8,   :locations => [home, bar],  :rowdiness => 1,  :ingredients => [hat, deck_of_cards]  },
+    {:name => "Flip Cup",  :source_id => 3, :complexity => 5, :players => 12,  :locations => [home, bar],  :rowdiness => 1 },
+    {:name => "Quarters",  :source_id => 1, :complexity => 1, :players => 8,   :locations => [bar      ],  :rowdiness => 3 }
+    ])
+    
+  Source.create([
+    {:name => "USA", :flag => 'us.png'},
+    {:name => "Mexico", :flag => 'mx.png'},
+    {:name => "Djibouti", :flag => 'dj.png'}
     ])
 
     # create_table "gameingredients", :force => true do |t|

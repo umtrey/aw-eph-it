@@ -2,6 +2,8 @@
 <p>Find me in app/views/game_search/list.html.erb</p>
 <ul>
   <% @games.each do |game| %>
-    <li><%= game.name %> - <%= game.id %></li>
+  <div class="<%= "complex#{game.complexity} #{game.source_id == 1 ? "domestic" : "import"}"  %>">
+    <%= game.name %> - <%= game.id %>
+  </div>
   <% end %>
 </ul>
